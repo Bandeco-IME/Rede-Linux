@@ -1,0 +1,94 @@
+  [1m[36m (294.8ms)[0m  [1mCREATE TABLE "linux_printers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (154.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (403.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (158.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (137.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009154305')
+  [1m[36mActiveRecord::SchemaMigration Load (7.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (275.7ms)[0m  [1mCREATE TABLE "linux_printers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (198.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (409.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (175.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (105.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009154305')
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (233.3ms)[0m  [1mCREATE TABLE "linux_printers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (142.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1154.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (210.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (184.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009154305')
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (193.9ms)[0m  [1mCREATE TABLE "linux_printers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (205.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (390.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (150.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (111.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009154305')
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (129.2ms)[0m  [1mCREATE TABLE "linux_printers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (137.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1200.7ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (159.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (116.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009154305')
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (39.6ms)[0m  [1mbegin transaction[0m
+Processing by LinuxPrintersController#status as HTML
+  Rendered linux_printers/status.html.haml within layouts/application (57.4ms)
+Completed 200 OK in 1776ms (Views: 1599.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (27.9ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by LinuxPrintersController#status as HTML
+  Rendered linux_printers/status.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 117ms (Views: 116.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (209.1ms)[0m  [1mCREATE TABLE "linux_printers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (293.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1177.6ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (194.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (129.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009154305')
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (61.5ms)[0m  [1mbegin transaction[0m
+Processing by LinuxPrintersController#status as HTML
+  Rendered linux_printers/status.html.haml within layouts/application (43.2ms)
+Completed 200 OK in 1409ms (Views: 1167.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (7.0ms)[0m  [1mbegin transaction[0m
+Processing by LinuxPrintersController#status as HTML
+  Rendered linux_printers/status.html.haml within layouts/application (37.4ms)
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (249.5ms)[0m  [1mCREATE TABLE "linux_printers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (192.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (893.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (186.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (125.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009154305')
+  [1m[35mActiveRecord::SchemaMigration Load (10.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (36.9ms)[0m  [1mbegin transaction[0m
+Processing by LinuxPrintersController#status as HTML
+  Rendered linux_printers/status.html.haml within layouts/application (57.5ms)
+Completed 200 OK in 1653ms (Views: 1372.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (10.8ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by LinuxPrintersController#status as HTML
+  Rendered linux_printers/status.html.haml within layouts/application (38.7ms)
+Completed 200 OK in 76ms (Views: 74.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (10.1ms)[0m  [1mbegin transaction[0m
+Processing by LinuxPrintersController#status as HTML
+  Rendered linux_printers/status.html.haml within layouts/application (9.6ms)
+Completed 200 OK in 126ms (Views: 83.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
