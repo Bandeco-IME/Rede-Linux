@@ -1,4 +1,4 @@
-----------------------------README------------------------
+
 
 ##Projeto Rede Linux
 ###### Projeto para disciplina Laboratório de programação 2, USP
