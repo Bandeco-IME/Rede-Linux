@@ -1,6 +1,37 @@
+
+
 ##Projeto Rede Linux
 ###### Projeto para disciplina Laboratório de programação 2, USP
 ###### Grupo: Bandeco
+###### Autores: Amadeu Shigeo, Carybé Gonçalves, Caio Dadauto, Gustavo Covas, Lucas Helfstein
+
+
+###Como instalar o ambiente DEV, testes e Produção
+
+
+Para baixar o ruby e o rails nas versões mais novas e estáveis (2.2.1 e 4.2.4, respectivamente):
+```
+ curl -L https://get.rvm.io | bash -s stable --autolibs=enabled --ruby --rails
+```
+
+Para usar a versão instalada do Ruby, caso o rvm não a tenha definido corretamente:
+```
+rvm use 2.2.1
+```
+
+Baixe o projeto:
+```
+git clone https://github.com/Bandeco-IME/Rede-Linux.git
+```
+
+Para subir o servidor:
+```
+cd Rede-Linux/
+
+bundle install
+
+rails server -db 0.0.0.0 -p 80 
+```
 
 ### Rspec
 Para rodar o rspec faça:
@@ -14,11 +45,4 @@ das versões < 3, que a apresentada no livro. Por isso, encontrei as diferenças
 [aqui](http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/). O grosso sobre o funcionamento
 foi pelo livro mesmo.
 
-### Sobre o commit
-Conversando com o carybé, tivemos a ideia de entregar somente a pagina de status e uma home meia boca.
-Nao sei direito o que informações, além das impressoras, colocar na home. 
-Por isso não implementei o rspec para uma possível chamada de uma ação index de um determinado controlador que ao
-meu ver não deveria ser o LinuxPrinters.
 
-Não sei como o professor espera receber o tal "relatório", mas, conversando com o carybé, achamos melhor entregar um relatório nesse
-README.
