@@ -1,0 +1,8 @@
+%h1 Rede Linux do IME-USP
+
+%table
+  - @printers.each do |printer|
+    %tr
+      %td= printer.name
+      %td= printer.status
+
