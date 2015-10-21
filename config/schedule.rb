@@ -19,7 +19,12 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 2.minutes do
+env :PATH, ENV['PATH']
+
+set :environment, 'development'
+set :output, '/root/cron_log.log'
+
+every 1.minute do
   rake "printers:update_euclides_status"
   rake "printers:update_galois_status"
 end
