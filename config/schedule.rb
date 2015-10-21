@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 5.minutes do
-  rake "printers:get_euclides_status"
-  rake "printers:get_galois_status"
+every 2.minutes do
+  rake "printers:update_euclides_status"
+  rake "printers:update_galois_status"
 end
