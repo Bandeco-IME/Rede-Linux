@@ -1,8 +1,14 @@
 %h1 Rede Linux do IME-USP
 
-%table
+%h2 Impressoras:
+%table{border: "solid"}
+  %tr
+    %th Name
+    %th Status
+    %th Last updated at
   - @printers.each do |printer|
     %tr
       %td= printer.name
       %td= printer.status
+      %td= printer.updated_at
 
