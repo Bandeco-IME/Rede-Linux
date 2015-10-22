@@ -32,11 +32,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Haml for views:
 gem 'haml'
 
+# Capybara and poltergeist web-driver for js pages parsing and testing:
 gem 'poltergeist'
-
 gem 'capybara'
+
+# Cups wrapper gem to get printer status:
+gem 'cupsffi'
+
+# Do tasks periodically (e.g. get printer status):
+gem 'whenever'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
