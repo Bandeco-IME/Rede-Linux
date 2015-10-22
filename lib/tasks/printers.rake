@@ -16,13 +16,13 @@ namespace :printers do
     euclides = Printer.find_by(name: 'Euclides')
     
     # Update its status using the cupsffi gem:
-    status = CupsPrinter.new('Euclides', hostname: '192.168.240.15').state[:state].to_s
+    status = CupsPrinter.new(euclides.name, hostname: cups_server).state[:state].to_s
     euclides.update_attributes(status: status, updated_at: Time.now)
   end
   
   task update_galois_status: :environment do
     galois = Printer.find_by(name: 'Galois')
-    status = CupsPrinter.new('Galois', hostname: '192.168.240.15').state[:state].to_s
+    status = CupsPrinter.new(galois.name, hostname: cups_server).state[:state].to_s
     galois.update_attributes(status: status, updated_at: Time.now)
   end
   

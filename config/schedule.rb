@@ -19,8 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-env :PATH, ENV['PATH']
-
 set :environment, 'development'
 set :output, '/root/cron_log.log'
 
