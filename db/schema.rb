@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020190935) do
+ActiveRecord::Schema.define(version: 20151022200916) do
+
+  create_table "pre_signed_users", force: :cascade do |t|
+    t.string   "nid"
+    t.string   "login"
+    t.string   "email"
+    t.text     "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "printers", force: :cascade do |t|
     t.string   "name"
