@@ -39,6 +39,9 @@ gem 'haml'
 gem 'poltergeist'
 gem 'capybara'
 
+# Selenium web-driver:
+gem 'selenium-webdriver'
+
 # Cups wrapper gem to get printer status:
 gem 'cupsffi'
 
@@ -50,6 +53,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'autotest-rails'
+  gem 'cucumber-rails', :require => false
 end
 
 group :development do
