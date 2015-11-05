@@ -11,17 +11,20 @@ class Printer < ActiveRecord::Base
     printer.cupsffi_object = CupsPrinter.new(printer.name, :hostname => @@cups_server)
   end
 
+  # Simple wrapper for the cupsffi gem:
   def accepting_jobs?
     return self.cupsffi_object.attributes['printer-is-accepting-jobs']
   end
-  
+
   def update_status
     if self.accepting_jobs?
       new_status = @cupsffi_object.state[:state].to_s
     else
-      yield
+      yield # Capyabara code provided by the user to retrieve error message
     end
 
-    self.update_attributes(status: new_status, updated_at: Time.now) # Force timestamp upgrade
+    # Force timestamp upgrade:
+    self.update_attributes(status: new_status, updated_at: Time.now)
+    
   end
 end
