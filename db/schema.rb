@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20151020190935) do
   create_table "printers", force: :cascade do |t|
     t.string   "name"
     t.text     "status"
+    t.string   "url"
+    t.string   "error_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
