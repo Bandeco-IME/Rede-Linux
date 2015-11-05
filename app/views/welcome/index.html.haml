@@ -1,19 +1,12 @@
 %h1 Rede Linux do IME-USP
-%h3 Pre-cadastro de novos usuarios
+%h3 Pagina administrativa para pre-cadastro
 
-%p 
-%form{:action=> "new"}
-  = label :user, :nid, "Nº USP  "
-  = text_field :user, :nid
-  %br
-  = label :user, :login, "Login"
-  = text_field :user, :login
-  %br
+%li
+ %a{ :href=> "../pre_signed_users/new"}
+  New
 
-  = label :user, :email, "Email  " 
-  = text_field :user, :email
-  %br
-  = label :user, :password
-  = password_field :user, :password
-  %br
-  %input{:type => "submit", :value => "Sign in"}
+%li 
+ %a{ :href=> "/fila"}
+  Fila
+
+ 
