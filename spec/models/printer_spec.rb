@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Printer, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "Printers information" do
+    it "should not be null" do
+      expect(Printer.all).not_to be_nil
+    end
+  end
+  
 end
