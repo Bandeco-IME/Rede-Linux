@@ -53,6 +53,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'autotest-rails'
   gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 group :development do

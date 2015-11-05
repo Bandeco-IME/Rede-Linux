@@ -75,6 +75,7 @@ GEM
       rails (>= 3, < 5)
     cupsffi (0.1.4)
       ffi
+    database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -215,6 +216,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   cucumber-rails
   cupsffi
+  database_cleaner
   haml
   jbuilder (~> 2.0)
   jquery-rails

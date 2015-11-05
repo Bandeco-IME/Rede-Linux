@@ -5,7 +5,7 @@ require 'capybara/cucumber'
 Capybara.default_driver = :poltergeist
 
 Given(/^that I am on the home page$/) do
-  page.visit "http://sas.linux.ime.usp.br:3000"
+  page.visit root_path
   expect(page.has_content?).to be true
 end
 
