@@ -6,11 +6,10 @@ class Printer < ActiveRecord::Base
   @@cups_server = '192.168.240.15'
   @@cups_server_up = system("ping -c 1 #{@@cups_server}")
 
-  @cupsffi_object = CupsPrinter.new(@name, :hostname => @@cups_server) if @@cups_server_up 
-    
   # Simple wrapper for the cupsffi gem:
   def accepting_jobs?
-    if @@cups_server_up 
+    if @@cups_server_up
+      self.cupsffi_object = CupsPrinter.new(self.name, :hostname => @@cups_server)
       return self.cupsffi_object.attributes['printer-is-accepting-jobs']
     else
       return false
