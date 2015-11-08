@@ -4,7 +4,7 @@ Feature: Printers at home page
     Should see the printer status at home page
 
     Scenario: Check printers at home
-        Given that I am on the home page
-        Then I should see "Euclides"
-        And I should not see "Undefined"
+        Given that we have "Euclides" at the database
+        And I am on the home page
+        Then I should see "Euclides"        
     
