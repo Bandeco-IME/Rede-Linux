@@ -1,6 +1,7 @@
 # Use simplecov
 require 'simplecov'
 SimpleCov.start
+SimpleCov.coverage_dir 'public/coverage'
 
 require 'capybara'
 require 'capybara/poltergeist'

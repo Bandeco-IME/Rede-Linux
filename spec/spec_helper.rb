@@ -19,7 +19,8 @@
 
 # Using simplecov gem for feedback on html
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'rails'
+SimpleCov.coverage_dir 'public/coverage'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
