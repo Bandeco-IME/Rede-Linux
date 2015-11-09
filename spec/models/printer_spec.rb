@@ -14,14 +14,18 @@ RSpec.describe Printer, type: :model do
     end
   end
 
-  describe "Check if it is accepting jobs" do
-    it "should check if the server is up" do
-    	expect(@cups_server_up).to be true
+  describe "accepting_jobs?" do
+    euclides = Printer.find_by(name: 'Euclides')
+    it "should not be null" do
+      expect(euclides.accepting_jobs?).not_to be_nil
     end
+  end
     
-    it  "Should return if it is accepting jobs" do
-	expect(@cupsffi_object.attributes['printer-is-accepting-jobs']).to eql("true")
-    end	
+  describe "update_status" do
+    euclides = Printer.find_by(name: 'Euclides')
+    it "should not be null" do
+      expect(euclides.update_status).not_to be_nil
+    end
   end
 
 end
