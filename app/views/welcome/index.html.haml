@@ -7,7 +7,7 @@
     %th Status
     %th Last updated at
   - @printers.each do |printer|
-    %tr
+    %tr{class: "printer_status", id: printer.name}
       %td= printer.name
       %td= printer.status
       %td= printer.updated_at
