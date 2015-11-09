@@ -9,8 +9,8 @@ require 'capybara/cucumber'
 
 Capybara.default_driver = :poltergeist
 
-Given(/^that we have "(.*?)" at the database$/) do |printer_name|
-  Printer.create(name: printer_name, status: "Undefined", url: "http://#{printer_name}/", error_url: "dstatus.cgi")
+Given(/^that we have "(.*?)" with status "(.*?)"at the database$/) do |printer, status|
+  Printer.create(name: printer, status: status, url: "http://#{printer}/", error_url: "dstatus.cgi")
 end
 
 Given(/^I am on the home page$/) do
@@ -19,9 +19,15 @@ Given(/^I am on the home page$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |s|
-  expect(page.has_content? s).to be true
+  expect(page).to have_content s
 end
 
 Then(/^I should not see "(.*?)"$/) do |s|
-  expect(page.has_content? s).to be false
+  expect(page).to have_no_content s
 end
+
+Then(/^I should see "(.*?)" as "(.*?)" status$/) do |status, printer|
+  tr_selector = 'tr#' << printer
+  expect(page).to have_css(tr_selector, text: status)
+end
+
