@@ -64,3 +64,6 @@ group :development do
   gem 'spring'
 
 end
+
+# Gem simplecov for code coverage
+gem 'simplecov', :require => false, :group => :test

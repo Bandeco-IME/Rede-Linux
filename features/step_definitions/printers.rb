@@ -1,3 +1,7 @@
+# Use simplecov
+require 'simplecov'
+SimpleCov.start
+
 require 'capybara'
 require 'capybara/poltergeist'
 require 'capybara/cucumber'
