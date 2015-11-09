@@ -1,8 +1,15 @@
+# coding: utf-8
 require 'cupsffi'
 
 class Printer < ActiveRecord::Base
 
   attr_accessor :cupsffi_object
+
+  @@status_messages = {
+    :available     => "Disponível",
+    :not_available => "Indisponível",
+    :out_of_paper  => "Sem papel",
+  }
   
   # DNS for the Cups server:
   @@cups_server = '192.168.240.15'
@@ -21,7 +28,7 @@ class Printer < ActiveRecord::Base
   # Check how this works with the automated Rake tasks at README.md
   def update_status
     if self.accepting_jobs?
-      new_status = @cupsffi_object.state[:state].to_s
+      new_status = @cupsffi_object.state[:state].to_s      
     else
       yield # Capyabara code provided by the user to retrieve error message
     end
