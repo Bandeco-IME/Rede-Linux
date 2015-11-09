@@ -1,21 +1,24 @@
 require 'cupsffi'
 
 class Printer < ActiveRecord::Base
+
+  attr_accessor :cupsffi_object
   
   # DNS for the Cups server:
   @@cups_server = '192.168.240.15'
-  @@cups_server_up = system("ping -c 1 #{@@cups_server}")
+  @@cups_server_up = system("ping -c 1 #{@@cups_server}")   # Is the cups server up?
 
   # Simple wrapper for the cupsffi gem:
   def accepting_jobs?
     if @@cups_server_up
       self.cupsffi_object = CupsPrinter.new(self.name, :hostname => @@cups_server)
-      return self.cupsffi_object.attributes['printer-is-accepting-jobs']
+      return (self.cupsffi_object.attributes['printer-is-accepting-jobs'] == 'true')
     else
       return false
     end
   end
- 
+
+  # Check how this works with the automated Rake tasks at README.md
   def update_status
     if self.accepting_jobs?
       new_status = @cupsffi_object.state[:state].to_s
@@ -23,7 +26,6 @@ class Printer < ActiveRecord::Base
       yield # Capyabara code provided by the user to retrieve error message
     end
 
-    # Force timestamp upgrade:
-    self.update_attributes(status: new_status, updated_at: Time.now)    
+    self.update_attributes(status: new_status, updated_at: Time.now) # Force timestamp upgrade
   end
 end
