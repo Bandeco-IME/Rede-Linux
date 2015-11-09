@@ -1,4 +1,4 @@
-# Use simplecov
+# Use simplecov and display test on a public page
 require 'simplecov'
 SimpleCov.start
 SimpleCov.coverage_dir 'public/coverage'

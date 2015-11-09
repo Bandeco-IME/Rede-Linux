@@ -17,7 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-# Using simplecov gem for feedback on html
+# Using simplecov gem for feedback on html and showing on a public page
 require 'simplecov'
 SimpleCov.start 'rails'
 SimpleCov.coverage_dir 'public/coverage'

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Use simplecov for testing
+# Use simplecov for testing and display test on a public page
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
   SimpleCov.start 'rails'
