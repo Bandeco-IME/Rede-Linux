@@ -12,7 +12,7 @@ class PreSignedUsersController < ApplicationController
                             Favor comparecer a sala de administração da rede para finalizar seu cadastro."
         redirect_to '/pre-signup/pre_signed_users/'
     else
-        render 'new'
+        render 'pre_signed_users/new'
     end
   end
   
