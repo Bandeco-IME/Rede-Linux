@@ -1,19 +1,32 @@
 %h1 Rede Linux do IME-USP
 %h3 Pre-cadastro de novos usuarios
 
-%p 
-%form{:action=> "new"}
-  = label :user, :nid, "Nº USP  "
-  = text_field :user, :nid
-  %br
-  = label :user, :login, "Login"
-  = text_field :user, :login
+- unless @pre_signed_user.errors.empty?
+  #warning
+    O pré-cadastro não pode ser concluido com sucesso devido as seguintes inconsistencias:
+    %ul
+      - @pre_signed_user.errors.full_messages.each do |error|
+        %li= error
+
+= form_tag '/pre-signup/pre_signed_users', method: :post do
+  = label :pre_signed_user, :name, "Nome", style: 'display: block;'
+  = text_field :pre_signed_user, :name
+
+  = label :pre_signed_user, :n_usp, "Número USP", style: 'display: block;'
+  = text_field :pre_signed_user, :n_usp
+
+  = label :pre_signed_user, :login, "Login", style: 'display: block;'
+  = text_field :pre_signed_user, :login
+
+  = label :pre_signed_user, :email, "Email", style: 'display: block;'
+  = text_field :pre_signed_user, :email
+
+  = label :pre_signed_user, :password, "Senha", style: 'display: block;'
+  = password_field :pre_signed_user, :password
+
+  = label :pre_signed_user, :password_confirmation, "Senha (confirmação)", style: 'display: block;'
+  = password_field :pre_signed_user, :password_confirmation
+
   %br
 
-  = label :user, :email, "Email  " 
-  = text_field :user, :email
-  %br
-  = label :user, :password
-  = password_field :user, :password
-  %br
-  %input{:type => "submit", :value => "Sign in"}
+  = submit_tag 'Enviar'

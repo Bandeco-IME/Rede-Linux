@@ -45,6 +45,8 @@ gem 'cupsffi'
 # Do tasks periodically (e.g. get printer status):
 gem 'whenever'
 
+gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -60,3 +62,6 @@ group :development do
   gem 'spring'
 
 end
+
+# Gem simplecov for html coverage of tests
+gem 'simplecov', :require => false, :group => :test

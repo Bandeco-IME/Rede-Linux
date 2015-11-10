@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @printers = Printer.all
+    @users = PreSignedUser.all
   end
 end

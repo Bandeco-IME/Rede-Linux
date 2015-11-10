@@ -14,12 +14,13 @@
 ActiveRecord::Schema.define(version: 20151022200916) do
 
   create_table "pre_signed_users", force: :cascade do |t|
-    t.string   "nid"
+    t.string   "n_usp"
+    t.string   "name"
     t.string   "login"
     t.string   "email"
-    t.text     "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "encrypt_password"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "printers", force: :cascade do |t|
