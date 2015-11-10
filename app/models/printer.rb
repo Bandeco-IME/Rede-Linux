@@ -12,7 +12,7 @@ class Printer < ActiveRecord::Base
   }
   
   # DNS for the Cups server:
-  @@cups_server = '192.168.240.15'
+  @@cups_server = 'cups'  
   @@cups_server_up = system("ping -c 1 #{@@cups_server}")   # Is the cups server up?
 
   # Simple wrapper for the cupsffi gem:
