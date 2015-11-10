@@ -5,8 +5,8 @@
   #warning
     O pré-cadastro não pode ser concluido com sucesso devido as seguintes inconsistencias:
     %ul
-      - @pre_signed_user.errors.full_messages.each do |error|
-        %li= error
+      - @pre_signed_user.errors.messages.each_value do |message|
+        %li= message[0]
 
 = form_tag '/pre-signup/pre_signed_users', method: :post do
   = label :pre_signed_user, :name, "Nome", style: 'display: block;'
