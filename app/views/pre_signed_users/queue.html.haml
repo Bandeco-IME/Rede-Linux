@@ -1,0 +1,19 @@
+%h1 Rede Linux do IME-USP
+%h3 Fila de usuários aguardando o cadastro
+
+%table#queue
+  %tr
+    %th N° USP
+    %th Nome
+    %th Login
+    %th Email
+    %th Data de Pré Cadastro
+  %tbody
+    - @pre_signed_users.each do |user|
+      %tr
+        %td= user.n_usp
+        %td= user.name
+        %td= user.login
+        %td= user.email
+        %td= user.created_pre_signed_at
+= link_to "Voltar à página inicial", './'

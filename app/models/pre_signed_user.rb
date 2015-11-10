@@ -6,7 +6,7 @@ class PreSignedUser < ActiveRecord::Base
 
   attr_accessor :password
 
-  validates :n_usp, presence: true
+  validates :n_usp, presence: {message: "Campo do número USP em branco;"}
   validates :name,  presence: true
   validates :login, presence: true
   validates :email, presence: true
@@ -18,5 +18,10 @@ class PreSignedUser < ActiveRecord::Base
 
   def clear_password
     self.password = nil
+  end
+  
+  def created_pre_signed_at
+    year, month, day, hour = "#{self.created_at}".match(/(\d+)-(\d+)-(\d+) (.+) /).captures
+    "#{day}/#{month}/#{year} às #{hour}"
   end
 end
