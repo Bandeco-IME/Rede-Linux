@@ -36,7 +36,6 @@ namespace :printers do
         new_status = page.all("table")[5].all("td")[3].text                
       end      
     end
-
   end
   
 end
