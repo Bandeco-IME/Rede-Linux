@@ -15,7 +15,7 @@ class PreSignedUsersController < ApplicationController
         render 'pre_signed_users/new'
     end
   end
-  
+
   def queue
     @pre_signed_users = PreSignedUser.all
   end
@@ -23,7 +23,7 @@ class PreSignedUsersController < ApplicationController
   def index
     #Just render index view
   end
-  
+
   private
   def pre_signed_user_params
     params.require(:pre_signed_user).permit(:n_usp, :name, :login, :email, :password, :password_confirmation)

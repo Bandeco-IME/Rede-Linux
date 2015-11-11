@@ -26,7 +26,7 @@ class PreSignedUser < ActiveRecord::Base
   def clear_password
     self.password = nil
   end
-  
+
   def created_pre_signed_at
     year, month, day, hour = "#{self.created_at}".match(/(\d+)-(\d+)-(\d+) (.+) /).captures
     "#{day}/#{month}/#{year} às #{hour}"
