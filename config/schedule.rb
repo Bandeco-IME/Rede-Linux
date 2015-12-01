@@ -22,7 +22,3 @@
 set :environment, 'development'
 set :output, '/root/cron_log.log'
 
-every 1.minute do
-  rake "printers:update_euclides_status"
-  rake "printers:update_galois_status"
-end

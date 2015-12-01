@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-
-  # get '/status', to: 'linux_printers#status'
-  # get 'linux_printers/status'
+  get 'pre-cadastro/', to: 'pre_signed_users#new'
+  get 'queue/', to: 'pre_signed_users#queue'
+  get 'pre_signed_users/', to: 'pre_signed_users#index'
+  post 'pre_signed_users/', to: 'pre_signed_users#create'
 end

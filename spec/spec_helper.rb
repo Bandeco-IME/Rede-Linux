@@ -16,6 +16,14 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+# Using the simplecov gem for better test covering
+# Using simplecov gem for feedback on html and showing on a public page
+require 'simplecov'
+SimpleCov.start 'rails'
+SimpleCov.coverage_dir 'public/coverage'
+
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
