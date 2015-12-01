@@ -1,6 +1,7 @@
+
 Feature: New pre-signed-up user
 	In order to sign up
-	The administrator
+	The future user 
 	Should see the subscribe form
 	
 	Scenario: New User to pre-signup
