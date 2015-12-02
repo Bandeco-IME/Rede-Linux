@@ -11,12 +11,17 @@ namespace :printers do
     # Update its status (with Capybara code to retrieve error messages):
     euclides.update_status do
       page.visit self.url
-      status_msg = page.first("span[class='StatusMessage']").text
+      message = page.first("span[class='StatusMessage']").text
 
-      if status_msg =~ (/error/i)
+      if message =~ (/error/i) # Do we have an error message?
         page.visit self.url << self.error_url
         page.click_button("Error Information")
-        new_status = page.all("tbody")[2].text
+        message = page.all("tbody")[2].text
+        if message =~ (/paper/i) # Is the error message related to paper?
+          new_status = @@status_message[:out_of_paper]
+        else
+          new_status = @@status_message[:unavailable]
+        end
       end   
     end
     
