@@ -1,29 +1,46 @@
-require 'cupsffi'
-
-# CUPS server network address
-cups_server = '192.168.240.15'
-  
 namespace :printers do
-  # Creating one task for each printer isn't a DRY way to do this, but it will be necessary since each
-  # printer has a particular status page, and we will have to parse them to get error information.
 
-  # To do: Implement logic to check the status from CUPS and get error messages parsing the status'
-  # pages using Capybara, if that is the case.
-    
-  task update_euclides_status: :environment do
-    
+  # Printer class has update_status method, that first checks printer status via
+  # the cupsffi gem, then execute code provided to retrieve error message. (Not a
+  # DRY way, but the only one to deal with the printers error page interface)
+  
+  task update_euclides_status: :environment do    
     # Retrieve a Printer object from the db by name:
     euclides = Printer.find_by(name: 'Euclides')
     
-    # Update its status using the cupsffi gem:
-    status = CupsPrinter.new(euclides.name, hostname: cups_server).state[:state].to_s
-    euclides.update_attributes(status: status, updated_at: Time.now)
+    # Update its status (with Capybara code to retrieve error messages):
+    euclides.update_status do
+      page.visit self.url
+      message = page.first("span[class='StatusMessage']").text
+
+      if message =~ (/error/i) # Do we have an error message?
+        page.visit self.url << self.error_url
+        page.click_button("Error Information")
+        message = page.all("tbody")[2].text
+        if message =~ (/paper/i) # Is the error message related to paper?
+          new_status = @@status_message[:out_of_paper]
+        else
+          new_status = @@status_message[:unavailable]
+        end
+      end   
+    end
+    
   end
   
   task update_galois_status: :environment do
     galois = Printer.find_by(name: 'Galois')
-    status = CupsPrinter.new(galois.name, hostname: cups_server).state[:state].to_s
-    galois.update_attributes(status: status, updated_at: Time.now)
+    
+    galois.update_status do
+      page.visit self.url
+      status_msg = page.all("td[height='26']")[2].text
+
+      if status_msg =~ (/error/i)
+        page.find("input[type$='text']").set '2'
+        page.find("a[onclick*='login()']").click
+        page.visit self.url << self.error_url
+        new_status = page.all("table")[5].all("td")[3].text                
+      end      
+    end
   end
   
 end
