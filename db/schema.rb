@@ -13,8 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151022200916) do
 
-<<<<<<< HEAD
-=======
   create_table "pre_signed_users", force: :cascade do |t|
     t.string   "n_usp"
     t.string   "name"
@@ -25,7 +23,6 @@ ActiveRecord::Schema.define(version: 20151022200916) do
     t.datetime "updated_at",       null: false
   end
 
->>>>>>> master
   create_table "printers", force: :cascade do |t|
     t.string   "name"
     t.text     "status"

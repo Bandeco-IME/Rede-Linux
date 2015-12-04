@@ -34,6 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Haml for views:
 gem 'haml'
 
+# Bootstrap for layouts:
+gem 'bootstrap-sass'
+
 # Capybara and poltergeist web-driver for js pages parsing and testing:
 gem 'poltergeist'
 gem 'capybara'
@@ -48,15 +51,6 @@ gem 'cupsffi'
 gem 'whenever'
 
 gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'rspec-rails'
-  gem 'autotest-rails'
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -80,4 +74,3 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
->>>>>>> master
