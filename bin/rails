@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+# Use simplecov for testing and display test on a public page
+if ENV['RAILS_ENV'] == 'test'
+  require 'simplecov'
+  SimpleCov.start 'rails'
+  SimpleCov.coverage_dir 'public/coverage'
+  puts "required simplecov"
+end
+
+begin
+  load File.expand_path("../spring", __FILE__)
+rescue LoadError
+end
+APP_PATH = File.expand_path('../../config/application', __FILE__)
+require_relative '../config/boot'
+require 'rails/commands'

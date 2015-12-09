@@ -1,0 +1,15 @@
+require 'capybara'
+session = Capybara::Session.new(:selenium)
+
+Given(/^that I am on the home page$/) do
+  session.visit root
+  session.has_content?
+end
+
+Then(/^I should see "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should not see "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
