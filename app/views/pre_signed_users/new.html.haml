@@ -8,7 +8,7 @@
       - @pre_signed_user.errors.messages.each_value do |message|
         %li= message[0]
 
-= form_tag '/pre-signup/pre_signed_users', method: :post do
+= form_tag '/pre_signed_users', method: :post do
   = label :pre_signed_user, :name, "Nome", style: 'display: block;'
   = text_field :pre_signed_user, :name
 
