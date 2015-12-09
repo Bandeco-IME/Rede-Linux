@@ -5,7 +5,7 @@ Feature: New pre-signed-up user
 	Should see the subscribe form
 	
 	Scenario: New User to pre-signup
-		Given I am on the pre-signup page 
+		Given I am on the pre-signup home page 
 		When I follow "Cadastro de Novo Usuário"
 		Then I sould be on the pre_ signed_ users/new page
 		When I fill in "Nome" with "Amadeu S."

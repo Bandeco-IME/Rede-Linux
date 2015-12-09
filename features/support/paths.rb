@@ -2,7 +2,8 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
  
-    when /the pre-signup page/ then  '/pre-signup'
+    #when /the pre-signup page/ then  '/pre-signup'
+when /^the (pre-signup )?home\s?page$/ then '/pre-signup'
     else
       begin
         page_name =~ /the (.*) page/
