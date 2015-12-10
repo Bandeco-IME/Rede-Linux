@@ -1,11 +1,9 @@
-%h1 Rede Linux do IME-USP
-%h5 Você está no servidor de desenvolvimento do branch printers-interface
-%h2 Impressoras:
-%table{border: "solid"}
+%h3 Status da Impressora
+%table.col-xs-12
   %tr
-    %th Name
+    %th Nome
     %th Status
-    %th Last updated at
+    %th Última Verificação
   - @printers.each do |printer|
     %tr{class: "printer_status", id: printer.name}
       %td= printer.name

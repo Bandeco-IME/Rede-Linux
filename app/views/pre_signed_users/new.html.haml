@@ -1,8 +1,7 @@
-%h1 Rede Linux do IME-USP
-%h3 Pre-cadastro de novos usuarios
+%h3 Pré-cadastro de novos usuários
 
 - unless @pre_signed_user.errors.empty?
-  #warning
+  .alert.alert-warning
     O pré-cadastro não pode ser concluido com sucesso devido as seguintes inconsistencias:
     %ul
       - @pre_signed_user.errors.messages.each_value do |message|
@@ -10,25 +9,25 @@
 
 = form_tag pre_signed_users_path, method: :post do
   = label :pre_signed_user, :name, "Nome", style: 'display: block;'
-  = text_field :pre_signed_user, :name
+  = text_field :pre_signed_user, :name, class: 'form-control'
 
   = label :pre_signed_user, :n_usp, "Número USP", style: 'display: block;'
-  = text_field :pre_signed_user, :n_usp
+  = text_field :pre_signed_user, :n_usp, class: 'form-control'
 
   = label :pre_signed_user, :login, "Login", style: 'display: block;'
-  = text_field :pre_signed_user, :login
+  = text_field :pre_signed_user, :login, class: 'form-control'
 
   = label :pre_signed_user, :email, "Email", style: 'display: block;'
-  = text_field :pre_signed_user, :email
+  = text_field :pre_signed_user, :email, class: 'form-control'
 
   = label :pre_signed_user, :password, "Senha", style: 'display: block;'
-  = password_field :pre_signed_user, :password
+  = password_field :pre_signed_user, :password, class: 'form-control'
 
   = label :pre_signed_user, :password_confirmation, "Senha (confirmação)", style: 'display: block;'
-  = password_field :pre_signed_user, :password_confirmation
+  = password_field :pre_signed_user, :password_confirmation, class: 'form-control'
 
   %br
+  %br
 
-  = submit_tag 'Enviar'
+  = submit_tag 'Enviar', class: 'btn btn-default'
 
-= link_to "Voltar à página inicial", root_path
