@@ -1,5 +1,6 @@
 # coding: utf-8
 class PreSignedUsersController < ApplicationController
+
   def new
     @pre_signed_user = PreSignedUser.new
   end
@@ -30,8 +31,16 @@ class PreSignedUsersController < ApplicationController
     redirect_to pre_signed_users_queue_path
   end
 
+  def finish
+    @user = PreSignedUser.find(params[:id])
+    @user.destroy
+    flash[:notice] = "O pré cadastro de #{@user.name} foi finalizado com sucesso!"
+    redirect_to pre_signed_users_queue_path
+  end
+
   private
   def pre_signed_user_params
     params.require(:pre_signed_user).permit(:n_usp, :name, :login, :email, :password, :password_confirmation)
   end
+
 end

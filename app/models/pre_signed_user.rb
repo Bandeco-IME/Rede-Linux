@@ -7,7 +7,8 @@ class PreSignedUser < ActiveRecord::Base
   attr_accessor :password
 
   validates :n_usp, presence: {in: true, message: "Campo do número USP em branco;"},
-                    length:   {maximum: 30, message: "Número USP fornecido muito grande;"}
+                    length:   {maximum: 30, message: "Número USP fornecido muito grande;"},
+                    format:   {with: /\d+/, message: "Número USP inválido;"}
   validates :name, presence:  {in: true, message: "Campo do nome em branco;"},
                     length:   {maximum: 30, message: "Nome fornecido com mais de 30 caracteres;"}
   validates :login, presence: {in: true, message: "Campo do login em branco;"},
@@ -31,4 +32,5 @@ class PreSignedUser < ActiveRecord::Base
     year, month, day, hour = "#{self.created_at}".match(/(\d+)-(\d+)-(\d+) (.+) /).captures
     "#{day}/#{month}/#{year} às #{hour}"
   end
+
 end
